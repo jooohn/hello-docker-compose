@@ -1,0 +1,9 @@
+version: '2'
+services:
+  web:
+    build:
+      context: ./rails-docker
+    volumes:
+      - ./rails-docker:/usr/src/app
+    command: bundle exec rails s -b 0.0.0.0
+    env_file: ./.env.web
